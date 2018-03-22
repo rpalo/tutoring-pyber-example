@@ -24,23 +24,6 @@ fare_data = pd.read_csv("ride_data.csv")
 fare_data.head()
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -89,9 +72,6 @@ fare_data.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
 
 
 ```python
@@ -99,23 +79,6 @@ city_data = pd.read_csv("city_data.csv")
 city_data.head()
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -161,8 +124,6 @@ city_data.head()
 </div>
 
 
-
-
 ```python
 avg_fare_per_city = fare_data.groupby("city").mean()
 avg_city_fare_typed = avg_fare_per_city.join(city_data.set_index("city"))
@@ -170,22 +131,6 @@ avg_city_fare_typed.head()
 ```
 
 
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -241,9 +186,6 @@ avg_city_fare_typed.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
 
 
 ```python
@@ -274,20 +216,6 @@ city_summary.head()
 
 
 
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -336,10 +264,6 @@ city_summary.head()
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
 
 ```python
 urban_cities = city_summary[city_summary.type == "Urban"]
@@ -379,22 +303,6 @@ typed_fares.sample(10)
 ```
 
 
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -489,10 +397,6 @@ typed_fares.sample(10)
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
 
 ```python
 fare_per_type = typed_fares.groupby("type").sum()["fare"]
